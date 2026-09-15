@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  html, body {
+    background-color: #f8fafc;
+    color: #334155;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .font-company {
+    font-family: 'Archivo Black', 'Impact', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* Universal Combobox & Select Dropdown High-Contrast Styling */
+select {
+  color-scheme: light dark;
+}
+
+option {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+.dark select {
+  color-scheme: dark;
+  background-color: #18181b;
+  color: #ffffff;
+}
+
+.dark option {
+  background-color: #18181b;
+  color: #f4f4f5;
+}
+
+.dark select:focus option,
+.dark option:hover,
+.dark option:checked {
+  background-color: #27272a !important;
+  color: #ffffff !important;
+}
+
+/* Dark mode body override */
+.dark body {
+  background-color: #0A0A0A;
+  color: #94A3B8;
+}
+
+/* Surfaces and containers */
+.dark .dark\:bg-slate-950,
+.dark .dark\:bg-slate-900,
+.dark .dark\:bg-slate-900\/95,
+.dark .dark\:bg-slate-900\/60,
+.dark .dark\:bg-slate-900\/40 {
+  background-color: #121212;
+}
+
+.dark .dark\:bg-slate-800,
+.dark .dark\:bg-slate-800\/80,
+.dark .dark\:bg-slate-800\/60 {
+  background-color: #161616;
+}
+
+.dark .dark\:border-slate-800,
+.dark .dark\:border-slate-700,
+.dark .dark\:border-slate-700\/60 {
+  border-color: #1F2937;
+}
+
+/* Elegant Dark table header background */
+.dark thead tr,
+.dark .dark\:bg-slate-900\/50,
+.dark .dark\:bg-slate-950\/50 {
+  background-color: #0F0F0F;
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3F3F46;
+}
+
+/* Kiosk Camera Scanner Styling - prevent video duplication or repetition */
+#kiosk-html5-scanner {
+  width: 100% !important;
+  min-height: 280px !important;
+  max-height: 380px !important;
+  position: relative !important;
+  border: none !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #020617 !important;
+  border-radius: 1rem !important;
+}
+
+#kiosk-html5-scanner video {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 380px !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 1rem !important;
+}
+
+/* Ensure only one video element displays, prevent duplicate camera view */
+#kiosk-html5-scanner video ~ video {
+  display: none !important;
+}
+
+/* Hide html5-qrcode internal canvas and shaded overlays to prevent double camera reticles */
+#kiosk-html5-scanner canvas,
+#kiosk-html5-scanner #qr-shaded-region {
+  display: none !important;
+}
+
+#kiosk-html5-scanner > div {
+  width: 100% !important;
+  border: none !important;
+}
+
+#kiosk-html5-scanner img[alt="Info icon"],
+#kiosk-html5-scanner select,
+#kiosk-html5-scanner button {
+  display: none !important;
+}

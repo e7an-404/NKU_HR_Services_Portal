@@ -1,0 +1,6 @@
+{
+  "name": "NKU HR Services Portal",
+  "description": "Sistem Manajemen HR & Operasional PT. Nindya Krida Utama (NKU) mencakup Kehadiran, Jadwal Kerja, Penggajian, dan Konfigurasi Database.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
